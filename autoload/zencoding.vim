@@ -456,7 +456,7 @@ function! s:zen_toString_html(settings, current, type, inline, filters, itemno, 
   else
     if inline == 0
       if stridx(','.settings.html.empty_elements.',', ','.current.name.',') != -1
-        let str .= " />\n"
+        let str .= " >\n"
       else
         if stridx(','.settings.html.inline_elements.',', ','.current.name.',') == -1 && len(current.child)
           let str .= ">\n" . inner . '${cursor}</' . current.name . ">\n"
@@ -466,7 +466,7 @@ function! s:zen_toString_html(settings, current, type, inline, filters, itemno, 
       endif
     else
       if stridx(','.settings.html.empty_elements.',', ','.current.name.',') != -1
-        let str .= " />"
+        let str .= " >"
       else
         let str .= ">" . inner . '${cursor}</' . current.name . ">"
       endif
